@@ -1,0 +1,353 @@
+body {
+  font: 14px "Gill Sans", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e2534b;
+}
+
+#logo {
+  font: 6em "Back to Black Demo", Helvetica, Arial, sans-serif;
+  color: #f3f3f3;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#menuToggle {
+  display: block;
+  position: relative;
+  left: 50px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+  margin-top: 30px;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin-bottom: 6px;
+  position: relative;
+  background: #f3f3f3;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  display: block;
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+  display: block;
+}
+
+#menu a {
+  text-decoration: none;
+  color: #e2534b;
+  transition: color 0.3s ease;
+}
+
+#menu a:hover {
+  color: black;
+}
+
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+#mainHeader {
+  margin-bottom: 100px;
+}
+
+#intro p {
+  font-size: 2em;
+  width: 700px;
+  margin: 0 auto;
+  font-style: italic;
+  text-align: center;
+  color: #f3f3f3;
+  margin-top: 60px;
+}
+
+#intro a {
+  color: #e2534b;
+  font-size: 2.5em;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 45px;
+  background-color: #f3f3f3;
+  border-radius: 20px;
+}
+
+#intro a:hover {
+  color: #f3f3f3;
+  background-color: #232323;
+}
+
+#intro {
+  text-align: center;
+  margin-bottom: 150px;
+}
+
+footer {
+  text-align: center;
+  color: #f3f3f3;
+  font-size: 1.2em;
+}
+
+.filterNav, .filterText {
+  text-align: center;
+}
+
+.filterNav li {
+  display: inline;
+}
+
+.filterNav a {
+  color: #e2534b;
+  font-size: 1.5em;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 45px;
+  background-color: #f3f3f3;
+  border-radius: 20px;
+  margin-right: 15px;
+}
+
+.filterNav a:hover {
+  color: #f3f3f3;
+  background-color: #232323;
+}
+
+.filterText {
+  font-size: 2em;
+  color: #f3f3f3;
+  font-weight: normal;
+  margin-bottom: 30px;
+  margin-top: -50px;
+}
+
+#movCon {
+  margin: 5px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#movCon img {
+  width: 337px;
+  height: 500px;
+  margin-top: 30px;
+  display: inline-block;
+}
+
+#movCon p {
+  padding: 15px;
+  text-align: center;
+}
+
+.movList, .movDetails {
+  display: inline-block;
+  padding: 20px;
+}
+
+.movList h2 {
+  position: relative;
+  margin: 0;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 4px double #f3f3f3;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 15px;
+  color: #f3f3f3;
+  font-weight: normal;
+  font-size: 2em;
+}
+
+.movList img {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.movList img:hover {
+  -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(0%);
+}
+
+.movDetails {
+  display: inline-block;
+  margin-top: -30px;
+  text-align: center;
+  margin-bottom: 65px;
+}
+
+.movDetails p, h2, h3 {
+  font-size: 2em;
+  color: #f3f3f3;
+  text-align: center;
+}
+
+.movDetails h2 {
+  position: relative;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 4px double #f3f3f3;
+  box-sizing: border-box;
+  width: 30%;
+  margin-bottom: 15px;
+  color: #f3f3f3;
+  font-weight: normal;
+  margin: 0 auto;
+  font-size: 2.2em;
+}
+
+.movDetails p {
+  font-style: italic;
+}
+
+.movDetails h3 {
+  font-weight: normal;
+  margin-bottom: 60px;
+}
+
+.movDetails a {
+  color: #e2534b;
+  font-size: 1.5em;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 45px;
+  background-color: #f3f3f3;
+  border-radius: 20px;
+  margin-right: 15px;
+}
+
+.movDetails a:hover {
+  color: #f3f3f3;
+  background-color: #232323;
+}
+
+.form, .loginForm, .editForm, .delForm {
+  text-align: center;
+  margin-top: -50px;
+  color: #f3f3f3;
+}
+
+.form h2, .loginForm h2, .editForm h2{
+  color: #f3f3f3;
+  font-weight: normal;
+  font-size: 1.8em;
+}
+
+.delForm h2 {
+  color: #f3f3f3;
+  font-weight: normal;
+  font-size: 1.8em;
+  margin-bottom: 30px;
+}
+
+.form label, .loginForm label, .editForm label {
+  position: relative;
+  padding: 0 10px;
+  top: 10px;
+  font-size: 1.3em;
+}
+
+.form input[type="text"], .loginForm input[type="text"], .editForm input[type="text"] {
+  position: relative;
+  margin: 0;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 4px double #f3f3f3;
+  box-sizing: border-box;
+  width: 30%;
+  margin-bottom: 15px;
+}
+
+.submitBut, .delForm a {
+  color: #e2534b;
+  font-size: 1.5em;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 45px;
+  background-color: #f3f3f3;
+  border-radius: 20px;
+  margin-right: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.submitBut:hover, .delForm a:hover{
+  color: #f3f3f3;
+  background-color: #232323;
+}
+
+.level {
+  color: #f3f3f3;
+  background-color: #e2534b;
+  border: 2px solid #f3f3f3;
+  margin-top: 10px;
+}
+
+.delForm {
+  margin-bottom: 100px;
+}
